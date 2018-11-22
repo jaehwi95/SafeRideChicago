@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+  </head>
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Chat Rooms</title>
+
+</head>
+
+  {% extends "simple_login.html" %}
+  {% load bootstrap4 %}
+  
+{% block content %}
+
+<center><body>
+        <div class="chat_emoji"> </div>
+    	Which side of Chicago do you live in?<br/>
+	<select id="side">
+		<option value="Central">Central</option>
+		<option value="North">North</option>
+		<option value="South">South</option>
+		<option value="West">West</option>
+		<option value="East">East</option>
+	</select>
+	<input id="submit_side" type="button" value="Enter Chatroom">
+        </br></br></br></br>
+    <p><b>Word Frequency Table from all over Chicago</b></p>
+    <table class="table">
+        <tr>
+          <th>word</th>
+          <th>frequency</th>
+        </tr>
+        {% for word in data %}
+            <tr>
+                <td>{{word.vocab}}</td>
+                <td>{{word.frequency}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+	<script>
+		document.querySelector('#side').focus();
+		document.querySelector('#submit_side').onclick = function(e) {
+		    	var roomName = document.querySelector('#side').value;
+		    	window.location.pathname = '/chat/' + roomName + '/';
+		};
+	</script>
+</body>
+</html>
+
+</center></body>
+</html>
+
+{% endblock content %}
+>>>>>>> b86fcefffda173037177fdf4be9937ee7620aa36

@@ -1,0 +1,45 @@
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+</head>
+{% extends "simple_login.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+<div class="container">
+  <div id="login-row" class="row justify-content-center align-items-center">
+    <div id="login-column" class="col-md-6">
+      <div class="login-box col-md-12">
+	
+<br>
+  <br>
+    <br>
+
+<center><h1>Hello, {{ user.username }}!</h1></center>
+<ul>
+  <li>Username: {{ user.username }}</li>
+  <li>Email: {{ user.email }}</li>
+  <li>First name: {{ user.first_name }}</li>
+  <li>Last name: {{ user.last_name }}</li>
+  <li>Location: {{ user.profile.location }}</li><br>
+  <a href="{% url 'showmylist' %}">Show my crime list</a><br><br>
+</ul>
+<br>
+<br>
+<center><h1>Edit Profile</h1></center>
+<form method="post">
+  {% csrf_token %}
+  {{ user_form.as_p }}
+  {{ profile_form.as_p }}
+  <button type="submit">Save changes</button><br><br><br>
+  <a href="{% url 'main' %}">Back to Main Page</a>
+</form>
+	</div>
+    </div>
+  </div>
+      </div>
+
+{% endblock content %}
+

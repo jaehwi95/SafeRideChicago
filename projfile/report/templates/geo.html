@@ -1,0 +1,30 @@
+{% extends "simple.html" %}
+
+
+{% block content %}
+
+  <p>
+    <a href="{% url 'base_page' %}">+ Go to Base Page</a>
+  </p>
+
+
+    <table class="table">
+        <tr>
+          <th>address</th>
+          <th>location_desc</th>
+          <th>latitude</th><th>longitude</th>
+
+        </tr>
+        {% for crime_t in data %}
+            <tr>
+                <td>{{crime_t.address}}</td>
+                <td>{{crime_t.location_desc}}</td>
+                <td>{{crime_t.latitude}}</td>
+                <td>{{crime_t.longitude}}</td>
+
+
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
+

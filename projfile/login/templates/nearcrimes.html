@@ -1,0 +1,24 @@
+{% extends "simple.html" %}
+
+
+{% block content %}
+
+
+<table class="table">
+  <tr>
+    <th>username</th><th>location</th>
+    <th>description</th><th>date</th>
+  </tr>
+  {% for nearcrimes in crimes %}
+  <tr>
+    <td>{{nearcrimes.user}}</td>
+    <td>{{nearcrimes.location}}</td>
+    <td>{{nearcrimes.description}}</td>
+    <td>{{nearcrimes.date}}</td>
+  </tr>
+  {% endfor %}
+
+  {% endblock content %}
+
+ 
+

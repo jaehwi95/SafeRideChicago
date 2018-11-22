@@ -1,0 +1,17 @@
+{% extends "simple.html" %}
+
+{% block content %}
+
+   {{block.super}}
+   <div id='padding_create'>
+        <form method="POST">
+            {% csrf_token %}
+            <table class="table">
+                {{ form.as_table }}
+            </table>
+             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button class="button button1"><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSubmit&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></button>
+        </form>
+    </div>
+  
+
+{% endblock content %}

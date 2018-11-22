@@ -25,7 +25,7 @@ SECRET_KEY = '6z!l=6$y2)#2irhnr^=5q^n)!$!c3&-%7+$*$5dxn-#@0cuvot'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["su18-cs411-07.cs.illinois.edu","172.22.146.8","localhost","127.0.0.1", "172.22.146.8"]
+ALLOWED_HOSTS = ["jaehwi95.pythonanywhere.com","172.22.146.8","localhost","127.0.0.1", "172.22.146.8"]
 
 
 # Application definition
@@ -96,11 +96,10 @@ WSGI_APPLICATION = 'myweb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER': 'root',
+        'NAME': 'jaehwi95$test',
+        'USER': 'jaehwi95',
         'PASSWORD': 'Rlawognl9595',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'HOST': 'jaehwi95.mysql.pythonanywhere-services.com',
     }
 }
 
@@ -145,7 +144,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+
 LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 AUTH_PROFILE_MODULE = 'myweb.UserProfile'
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyAQcjAT-V_gbvf_bqzOutqKaQNbcZOL6Mo'
+
+STATIC_ROOT = "/home/jaehwi95/SafeRideChicago/SafeRideChicago/projfile/static"
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
